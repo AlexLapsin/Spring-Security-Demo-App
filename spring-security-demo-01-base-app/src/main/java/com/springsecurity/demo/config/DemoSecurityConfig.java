@@ -20,7 +20,10 @@ public class DemoSecurityConfig{
             .authorizeHttpRequests((authz) -> authz
                 .anyRequest().authenticated()
             )
-            .formLogin();
+            .formLogin()
+            	.loginPage("/showMyLoginPage")
+            	.loginProcessingUrl("/authenticateTheUser")
+            	.permitAll();
         return http.build();
     }
 
