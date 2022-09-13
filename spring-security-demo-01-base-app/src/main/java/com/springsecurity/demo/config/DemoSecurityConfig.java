@@ -17,9 +17,11 @@ public class DemoSecurityConfig{
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests((authz) -> authz
-                .anyRequest().authenticated()
-            )
+            .authorizeHttpRequests()
+            	.antMatchers("/").hasRole("EMPLOYEE")
+            	.antMatchers("/leaders/**").hasRole("MANAGER")
+            	.antMatchers("/systems/**").hasRole("ADMIN")
+            .and()	
             .formLogin()
             	.loginPage("/showMyLoginPage")
             	.loginProcessingUrl("/authenticateTheUser")
