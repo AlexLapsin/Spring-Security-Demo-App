@@ -28,8 +28,14 @@
 	
 	<!-- Add a link to point to /leaders ... this is for the managers -->
 	<p>
-	<a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>
-	(Only for Managers)
+		<a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>
+		(Only for Managers)
+	</p>
+
+	<!-- Add a link to point to /systems ... this is for the admins -->
+	<p>
+		<a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a>
+		(Only for Admin's)
 	</p>
 	
 	<hr>
