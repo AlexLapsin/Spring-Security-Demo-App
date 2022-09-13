@@ -15,6 +15,17 @@
 	Welcome to company home page!
 	</p>
 	
+	<hr>
+	<!-- Display user name and role -->		
+	<p>
+	
+		User: <security:authentication property="principal.username"/>
+		<br><br>
+		Role(s): <security:authentication property="principal.authorities"/>
+	</p>	
+	
+	<hr>
+	
 	<!-- Add a log out button -->
 	<form:form action="${pageContext.request.contextPath}/logout"
 				method="POST">
